@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRINTER BOT</title>
+
+    %%CSS%%
+</head>
+<body>
+    <div class="content-wrapper">
+        <a href="#" onclick="document.getElementById('file-chooser').click()">
+            <img src="data:image/jpeg;base64,%%PRINTERBOT%%" alt="" />
+        </a>
+
+        <form action="/upload" method="post" enctype="multipart/form-data" class="d-flex">
+            <input name="file" type="file" id="file-chooser" />
+            <button>FEED ME</button>
+        </form>
+    </div>
+
+    <script>
+    const handleSubmit = (e) => {
+        const f = event.currentTarget;
+        const url = new URL(form.action);
+        const formData = new FormData(form);
+
+        const fetchOptions = {
+            method: f.method,
+            body: formData,
+        };
+
+        fetch(url, fetchOptions).then(res => res.json()).then( (res) => {
+            console.log(res);
+        }).catch( (err) => {
+            console.log(err);
+        });
+
+        e.preventDefault();
+    }
+
+    const form = document.querySelector("form");
+    form.addEventListener('submit', handleSubmit);
+    </script>
+</body>
+</html>

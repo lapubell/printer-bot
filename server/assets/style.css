@@ -1,0 +1,22 @@
+html, body {
+    background-color: #f7f6f4;
+}
+
+.content-wrapper {
+    width: 800px;
+    max-width: calc(100% - 10px);
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.d-flex {
+    display: flex;
+}
+
+input[type=file] {
+    display: none;
+}
