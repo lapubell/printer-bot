@@ -1,2 +1,3 @@
 httpd/printer-bot
 .env
+deploy.sh
